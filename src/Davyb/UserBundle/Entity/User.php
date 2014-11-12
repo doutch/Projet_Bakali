@@ -15,6 +15,7 @@ class User extends BaseUser
      * @var integer
      */
     protected $id;
+    
 
     /**
      * Get id
