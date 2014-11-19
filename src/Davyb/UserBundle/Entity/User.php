@@ -16,6 +16,8 @@ class User extends BaseUser
      */
     protected $id;
     
+    
+    protected $facebookId;
 
     /**
      * Get id

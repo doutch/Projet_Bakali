@@ -1,3 +1,5 @@
 site_bakali_homepage:
     path:     /
     defaults: { _controller: SiteBakaliBundle:Default:index }
+    
+

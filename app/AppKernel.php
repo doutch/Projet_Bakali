@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new Davyb\SiteBakaliBundle\SiteBakaliBundle(),
             new Davyb\UserBundle\UserBundle(),
         	new FOS\UserBundle\FOSUserBundle(),
+        	new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new Davyb\DashBoardBundle\DashBoardBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

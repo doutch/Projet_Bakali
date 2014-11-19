@@ -25,13 +25,26 @@ security:
                 check_path: fos_user_security_check
             logout:
                 path:       fos_user_security_logout
-                target:     /platform
+                target:     /
             remember_me:
-                key:        %secret% 
-                
+                key:        "%secret%"
+            oauth:
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                login_path:        /connect
+                use_forward:       false
+                failure_path:      /connect
 
+                oauth_user_provider:
+                    service: davyb.oauth.user_provider
+       
         default:
             anonymous: ~
 
     access_control:
+        #- { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY , requires_channel: https }
+        #- { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY , requires_channel: https }
+        #- { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY , requires_channel: https }
+        #- { path: ^/admin/, role: ROLE_ADMIN }
+        #- { path: ^/dashboard/, role: ROLE_USER }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }           

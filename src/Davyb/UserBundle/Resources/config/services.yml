@@ -1,4 +1,9 @@
+
+parameters:
+    davyb.oauth.user_provider.class: Davyb\UserBundle\UserProvider
+
 services:
-#    user.example:
-#        class: Davyb\UserBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    davyb.oauth.user_provider:
+        class: "%davyb.oauth.user_provider.class%"
+        arguments: ['@fos_user.user_manager', { facebook: facebookId }]
+
