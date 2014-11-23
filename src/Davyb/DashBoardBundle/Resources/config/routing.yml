@@ -1,3 +1,7 @@
-dash_board_homepage:
+dashboard_homepage:
     path:     /dashboard/accueil
+    defaults: { _controller: DashBoardBundle:Default:index }
+    
+dashboard_profil:
+    path:     /dashboard/profil
     defaults: { _controller: DashBoardBundle:Default:index }

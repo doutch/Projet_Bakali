@@ -15,3 +15,5 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
+    oauth.facebook.id: 377745779048940
+    oauth.facebook.secret: 44896e30a899efea8dbf399bc996cb43
