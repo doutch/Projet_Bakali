@@ -1,3 +1,3 @@
 dash_board_homepage:
-    path:     /hello/{name}
+    path:     /dashboard/accueil
     defaults: { _controller: DashBoardBundle:Default:index }

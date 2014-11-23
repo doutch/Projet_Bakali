@@ -12,9 +12,6 @@ security:
             id: fos_user.user_provider.username
 
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
             
         main:
             pattern:        ^/
@@ -23,9 +20,10 @@ security:
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
+                default_target_path: /dashboard/accueil
             logout:
                 path:       fos_user_security_logout
-                target:     /
+                target:     /login
             remember_me:
                 key:        "%secret%"
             oauth:
@@ -41,10 +39,14 @@ security:
         default:
             anonymous: ~
 
-    access_control:
-        #- { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY , requires_channel: https }
-        #- { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY , requires_channel: https }
-        #- { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY , requires_channel: https }
-        #- { path: ^/admin/, role: ROLE_ADMIN }
-        #- { path: ^/dashboard/, role: ROLE_USER }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }           
+    access_control: 
+        - { path: ^/_wdt/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/_profiler/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/js/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/css/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/dashboard/, role: ROLE_USER }    
+        - { path: ^/, roles: ROLE_USER }   

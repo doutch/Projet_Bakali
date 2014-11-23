@@ -1,3 +1,8 @@
+site_bakali:
+    resource: "@SiteBakaliBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
 dash_board:
     resource: "@DashBoardBundle/Resources/config/routing.yml"
     prefix:   /
@@ -16,10 +21,6 @@ hwi_oauth_login:
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
-
-site_bakali:
-    resource: "@SiteBakaliBundle/Resources/config/routing.yml"
     prefix:   /
     
 fos_user_security:
