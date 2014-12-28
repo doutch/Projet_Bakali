@@ -1,0 +1,9 @@
+Davyb\DashBoardBundle\Entity\Profil:
+    properties:
+        nom:
+            - NotBlank: ~
+        prenom:
+            - NotBlank: ~
+
+        cheminPhotoProfil:
+        

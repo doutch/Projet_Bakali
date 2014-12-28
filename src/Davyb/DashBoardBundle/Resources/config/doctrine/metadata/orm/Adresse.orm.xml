@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Adresse" table="adresse">
+    <indexes>
+      <index name="fk_adresse_profil_idx" columns="id_profil"/>
+    </indexes>
+    <id name="idAdresse" type="integer" column="id_adresse">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rue" type="string" column="rue" length="256" nullable="true"/>
+    <field name="nRue" type="string" column="n_rue" length="10" nullable="false"/>
+    <field name="ville" type="string" column="ville" length="256" nullable="true"/>
+    <field name="codePostal" type="integer" column="code_postal" nullable="true"/>
+    <field name="region" type="string" column="region" length="256" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="10" scale="0" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="10" scale="0" nullable="true"/>
+    <many-to-one field="idProfil" target-entity="Profil">
+      <join-columns>
+        <join-column name="id_profil" referenced-column-name="id_profil"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

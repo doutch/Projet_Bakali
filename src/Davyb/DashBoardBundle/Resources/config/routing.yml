@@ -3,5 +3,5 @@ dashboard_homepage:
     defaults: { _controller: DashBoardBundle:Default:index }
     
 dashboard_profil:
-    path:     /dashboard/profil
-    defaults: { _controller: DashBoardBundle:Default:index }
+    path:     /dashboard/profil/edit
+    defaults: { _controller: DashBoardBundle:Profil:editProfil }

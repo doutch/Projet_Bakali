@@ -20,8 +20,12 @@
     	<!-- Font Awesome -->
     	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     	
+    	<!-- Jquery UI-->
+    	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    	
     	<!--  CSS perso--> 
     	<link href="{{ asset('bundles/theme/css/dashboard.css') }}" rel="stylesheet">
+    	<link href="{{ asset('bundles/theme/css/dashboard-responsive.css') }}" rel="stylesheet">
     	
 	</head>
 	
@@ -86,6 +90,9 @@
 		<!-- Jquery -->
 		<script type="text/javascript" src = "{{ asset('bundles/theme/js/jquery-2.1.1.min.js') }}"></script>
 		
+		<!-- Jquery UI-->
+		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+		
 		<!-- Bootstrap -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		
@@ -99,6 +106,34 @@
 	    
 	    <script type="text/javascript" src="{{ asset('bundles/theme/js/gritter/js/jquery.gritter.js') }}"></script>
 	    <script type="text/javascript" src="{{ asset('bundles/theme/js/gritter/js/gritter-conf.js') }}"></script>
+	    
+	    <!--  DatePicker -->
+		<script type="text/javascript">
+			$(".input_date").datepicker({
+			    dateFormat: 'dd/mm/yy',
+			    firstDay:1,
+			    changeMonth: true,
+			    changeYear: true,
+			    yearRange: "-100:+0",
+			    maxDate: "+1M +10D"
+			}).attr("readonly","readonly");
+		</script>
+		
+		<!-- Jquery Geocodings -->
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+		<script class="include" type="text/javascript" src= "{{ asset('bundles/theme/js/jquery.geocomplete.min.js') }}"></script>
+		
+		<script>
+      $(function(){
+        $("#geocoding").geocomplete({
+        //  map: ".map_canvas",
+          details: "form",
+          detailsAttribute: "data-geo"
+        });
+        
+       
+      });
+    </script>
 		
 	</body>
 </html>

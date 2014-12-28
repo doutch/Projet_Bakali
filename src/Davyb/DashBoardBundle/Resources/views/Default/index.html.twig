@@ -2,7 +2,11 @@
 {% extends 'DashBoardBundle:Layout:layout_defaut.html.twig' %}
 
 {% block content %}
-	{% include "DashBoardBundle:Vues:vue_profil_edit.html.twig" %}
+
+	{% if page == 'profil_edit' %}
+		{% include "DashBoardBundle:Vues:vue_profil_edit.html.twig" %}
+	{% endif %}
+	
 {% endblock %}
 
 

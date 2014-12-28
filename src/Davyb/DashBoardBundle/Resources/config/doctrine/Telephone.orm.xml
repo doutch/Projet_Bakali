@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Davyb\DashBoardBundle\Entity\Telephone" table="telephone">
+    <indexes>
+      <index name="fk_profil_tel_idx" columns="id_profil"/>
+    </indexes>
+    <id name="idTelephone" type="integer" column="id_telephone">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="telephone" type="string" column="telephone" length="45" nullable="true"/>
+    <many-to-one field="idProfil" target-entity="Profil">
+      <join-columns>
+        <join-column name="id_profil" referenced-column-name="id_profil"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
